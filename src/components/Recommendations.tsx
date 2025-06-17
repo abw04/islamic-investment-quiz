@@ -12,7 +12,18 @@ interface RecommendationsProps {
   onBackToStart: () => void;
 }
 
-const instruments = {
+interface InstrumentData {
+  description: string;
+  minInvestment: string;
+  riskLevel: string;
+  shariahPrinciple: string;
+  whyChoose: string;
+  howToStart: string[];
+  platforms: string[];
+  shariahNote?: string;
+}
+
+const instruments: Record<string, InstrumentData> = {
   'Shariah Mutual Funds': {
     description: "Pooled funds managed according to Islamic law. Professional managers invest your money in halal companies.",
     minInvestment: "~IDR 100,000",
