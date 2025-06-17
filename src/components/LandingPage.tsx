@@ -1,7 +1,6 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mosque, Shield, TrendingUp, Heart } from 'lucide-react';
+import { Building2, Shield, TrendingUp, Heart } from 'lucide-react';
 
 interface LandingPageProps {
   onStartQuiz: () => void;
@@ -13,7 +12,7 @@ const LandingPage = ({ onStartQuiz }: LandingPageProps) => {
       <div className="text-center mb-12">
         <div className="flex justify-center mb-6">
           <div className="p-4 bg-emerald-100 rounded-full">
-            <Mosque className="h-16 w-16 text-emerald-600" />
+            <Building2 className="h-16 w-16 text-emerald-600" />
           </div>
         </div>
         
