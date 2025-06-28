@@ -306,6 +306,14 @@ const Quiz = ({ onComplete }: QuizProps) => {
   const progress = useMemo(() => ((currentQuestion + 1) / questions.length) * 100, [currentQuestion]);
   const question = useMemo(() => questions[currentQuestion], [currentQuestion]);
 
+  console.log('Quiz component rendering, currentQuestion:', currentQuestion, 'questions length:', questions.length);
+  
+  // Safety check
+  if (!question) {
+    console.error('Question not found for index:', currentQuestion);
+    return <div className="text-center p-8"><h2>Loading quiz...</h2></div>;
+  }
+  
   return (
     <div className="container mx-auto px-4 py-12 max-w-2xl">
       {hasUnsavedProgress && (
