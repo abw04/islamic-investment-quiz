@@ -1,73 +1,145 @@
-# Welcome to your Lovable project
+# Islamic Investment Quiz
 
-## Project info
+A modern React-based web application that helps users determine their Shariah-compliant investment risk profile through an interactive questionnaire.
 
-**URL**: https://lovable.dev/projects/60c90f76-f641-472d-b6c6-88b5780107ca
+## Features
 
-## How can I edit this code?
+- **Interactive Risk Assessment**: 6-question quiz to evaluate investment risk tolerance
+- **Shariah-Compliant Focus**: All recommendations adhere to Islamic finance principles
+- **Personalized Results**: Risk profiling categorizes users as Cautious Saver, Balanced Grower, or Growth Seeker
+- **Investment Recommendations**: Detailed suggestions for halal investment platforms and instruments
+- **Modern UI**: Clean, responsive design using shadcn/ui components and Tailwind CSS
+- **Mobile Responsive**: Optimized for all device sizes
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite with SWC
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Routing**: React Router DOM
+- **State Management**: React useState (no external state library)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/60c90f76-f641-472d-b6c6-88b5780107ca) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16 or higher)
+- npm or yarn package manager
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone https://github.com/abw04/islamic-investment-quiz.git
+cd islamic-investment-quiz
+```
 
-Follow these steps:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server (port 8080)
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run lint` - Run ESLint code quality checks
+- `npm run preview` - Preview production build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Testing the Application
 
-## What technologies are used for this project?
+### Manual Testing Steps
 
-This project is built with:
+1. **Landing Page**: Verify the introduction loads with Islamic finance information
+2. **Quiz Flow**: Complete all 6 questions and ensure scoring works correctly
+3. **Results Page**: Check that risk profile displays based on score ranges:
+   - 14+ points: "Cautious Saver"
+   - 9-13 points: "Balanced Grower" 
+   - <9 points: "Growth Seeker"
+4. **Recommendations**: Verify investment suggestions match the risk profile
+5. **Navigation**: Test back/forward buttons and page transitions
+6. **Responsive Design**: Test on different screen sizes (mobile, tablet, desktop)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Browser Testing
 
-## How can I deploy this project?
+Test the application in:
+- Chrome/Chromium
+- Firefox
+- Safari
+- Edge
 
-Simply open [Lovable](https://lovable.dev/projects/60c90f76-f641-472d-b6c6-88b5780107ca) and click on Share -> Publish.
+### Code Quality
 
-## Can I connect a custom domain to my Lovable project?
+Run linting to check for code quality issues:
+```bash
+npm run lint
+```
 
-Yes, you can!
+Build the project to check for TypeScript errors:
+```bash
+npm run build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+src/
+├── components/
+│   ├── LandingPage.tsx     # Introduction and quiz start
+│   ├── Quiz.tsx            # 6-question risk assessment
+│   ├── Results.tsx         # Risk profile display
+│   ├── Recommendations.tsx # Investment suggestions
+│   └── ui/                 # shadcn/ui components
+├── pages/
+│   ├── Index.tsx           # Main application flow
+│   └── NotFound.tsx        # 404 page
+├── hooks/                  # Custom React hooks
+├── lib/
+│   └── utils.ts           # Utility functions
+└── main.tsx               # Application entry point
+```
+
+## Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
+
+### Deployment Options
+
+- **Vercel**: Connect your GitHub repository for automatic deployments
+- **Netlify**: Drag and drop the `dist/` folder or connect via Git
+- **GitHub Pages**: Use GitHub Actions to deploy the built files
+- **Any Static Host**: Upload the contents of `dist/` to your web server
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Built with modern React ecosystem tools
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Styling with [Tailwind CSS](https://tailwindcss.com/)
+- Focus on Islamic finance principles and Shariah compliance
