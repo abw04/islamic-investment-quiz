@@ -209,25 +209,7 @@ const Quiz = ({ onComplete }: QuizProps) => {
     return () => clearInterval(interval);
   }, [quizStartTime]);
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Enter' && selectedAnswer) {
-        event.preventDefault();
-        handleNext();
-      } else if (event.key === 'ArrowLeft' && currentQuestion > 0) {
-        event.preventDefault();
-        handlePrevious();
-      } else if (event.key === 'ArrowRight' && selectedAnswer) {
-        event.preventDefault();
-        handleNext();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedAnswer, currentQuestion, handleNext, handlePrevious]);
-
+  // Function definitions
   const handleNext = useCallback(() => {
     if (!selectedAnswer) {
       // Add visual feedback for validation using ref
@@ -274,6 +256,25 @@ const Quiz = ({ onComplete }: QuizProps) => {
       setShowExplanation(false);
     }
   }, [currentQuestion, answers]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Enter' && selectedAnswer) {
+        event.preventDefault();
+        handleNext();
+      } else if (event.key === 'ArrowLeft' && currentQuestion > 0) {
+        event.preventDefault();
+        handlePrevious();
+      } else if (event.key === 'ArrowRight' && selectedAnswer) {
+        event.preventDefault();
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedAnswer, currentQuestion, handleNext, handlePrevious]);
 
   const handleClearProgress = useCallback(() => {
     try {
