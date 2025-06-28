@@ -18,14 +18,14 @@ const Index = () => {
 
   const handleQuizComplete = (score: number) => {
     setQuizScore(score);
-    // Calculate risk profile based on score
+    // Updated risk profile calculation for 10 questions (score range: 10-30)
     let profile: RiskProfile;
-    if (score >= 14) {
-      profile = 'Cautious Saver';
-    } else if (score >= 9) {
-      profile = 'Balanced Grower';
+    if (score >= 24) {
+      profile = 'Cautious Saver';  // 24-30 points
+    } else if (score >= 17) {
+      profile = 'Balanced Grower'; // 17-23 points  
     } else {
-      profile = 'Growth Seeker';
+      profile = 'Growth Seeker';   // 10-16 points
     }
     setRiskProfile(profile);
     setCurrentStep('results');
